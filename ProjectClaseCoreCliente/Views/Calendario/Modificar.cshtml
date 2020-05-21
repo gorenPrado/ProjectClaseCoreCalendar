@@ -1,0 +1,33 @@
+﻿@model ProjectClaseCore.Models.Eventos
+
+@{
+    ViewData["Title"] = "Modificar";
+}
+
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-4 bg-dark text-center">
+            <form asp-action="Insertar">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label class="control-label text-white">Fecha de Inicio</label>
+                    <input asp-for="FechaInc" class="form-control text-dark" />
+                    <span asp-validation-for="FechaInc" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label text-white">Fecha Final</label>
+                    <input asp-for="FechaFnl" class="form-control text-dark" />
+                    <span asp-validation-for="FechaFnl" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Descripcion" class="control-label text-white"></label>
+                    <input asp-for="Descripcion" class="form-control text-dark" />
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Modificar" class="btn btn-success" />
+                    <button asp-action="Eventos" class="btn btn-outline-light">Volver</button>
+                </div>
+            </form>
+        </div>
+    </div>
+

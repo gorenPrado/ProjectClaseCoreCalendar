@@ -1,0 +1,25 @@
+﻿@model ProjectClaseCore.Models.Usuarios
+
+@{
+    ViewData["Title"] = "Index";
+}   
+<body class="text-center">
+    <h1>Perfil de @Html.DisplayFor(model => model.Nombre)</h1>
+    <div class="card" style="width: 18rem;margin:0 auto">
+    <img class="card-img-top" src="https://www.optimaley.com/wp-content/uploads/2014/09/foto-perfil-generica.jpg" alt="Card image cap">
+    <div class="card-body">        
+    </div>
+    <ul class="list-group list-group-flush text-center">
+        <li class="list-group-item"><b>@Html.DisplayNameFor(model => model.IdUsuario):</b> @Html.DisplayFor(model => model.IdUsuario)</li>
+        <li class="list-group-item"><b>@Html.DisplayNameFor(model => model.Nombre):</b> @Html.DisplayFor(model => model.Nombre)</li>
+        <li class="list-group-item"><b>@Html.DisplayNameFor(model => model.Oficio):</b> @Html.DisplayFor(model => model.Oficio)</li>
+        <li class="list-group-item"><b>@Html.DisplayNameFor(model => model.Nacionalidad):</b> @Html.DisplayFor(model => model.Nacionalidad)</li>
+        <li class="list-group-item"><b>@Html.DisplayNameFor(model => model.Correo):</b> @Html.DisplayFor(model => model.Correo)</li>
+    </ul>
+    <div class="card-body text-center">
+        @Html.ActionLink("Eventos", "Eventos")<hr />
+        @Html.ActionLink("Editar","EditarUsuario")
+    </div>
+    </div>
+
+</body>

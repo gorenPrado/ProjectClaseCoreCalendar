@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ProjectClaseCore.Models.Eventos>
+
+@{
+    ViewData["Title"] = "Eventos";
+}
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>
+                Fecha de Inicio
+            </th>
+            <th>
+                Fecha Final
+            </th>
+            <th>
+                Descripcion
+            </th>            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>           
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaInc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaFnl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Modificar", new { idevento=item.IdEvento}, new { @class="text-white btn btn-success" }) |
+                @Html.ActionLink("Borrar", "Eliminar", new { idevento=item.IdEvento }, new { @class = "text-white btn btn-warning" })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<p>
+    <a asp-action="Insertar" class="btn btn-outline-dark">Crear un Nuevo Evento</a>
+</p>
