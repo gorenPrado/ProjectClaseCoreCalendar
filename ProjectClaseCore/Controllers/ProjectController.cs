@@ -58,6 +58,12 @@ namespace ProjectClaseCore.Controllers
             List<Eventos> pedidos = repo.EventosUsuario(usu.IdUsuario);
             return pedidos;
         }
+        [HttpGet("[action]")]
+        public ActionResult<List<Eventos>> EventoUsuario(int IdUsuario)
+        {            
+            List<Eventos> pedidos = repo.EventosUsuario(IdUsuario);
+            return pedidos;
+        }
         [Authorize]
         [HttpPost("[action]")]
         public void CrearUsuario(Usuarios usuario)
